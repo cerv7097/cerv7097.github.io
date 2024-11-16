@@ -30,12 +30,15 @@ a:hover {
   text-decoration: underline;
   font-weight: bold;
 }
-
 .enjoys {
   color: green;
   font-size: 28px;
 }
-
 li {
   color: green;
+}
+table {
+  width: 100%; /* Make the table take full width */
+  border-collapse: collapse; /* Remove spacing between borders */
+  margin: 20px auto; /* Center the table */
 }
