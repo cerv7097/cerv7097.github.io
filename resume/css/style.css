@@ -6,3 +6,30 @@ img {
   display: block;
   margin: auto;
 }
+header {
+    background: #2a9d8f;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 15px;
+}
+
+section {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background: #fff;
+}
+
+h2 {
+    color: #2a9d8f;
+}
