@@ -3,6 +3,9 @@ body {
   font-family: 'Roboto', Arial, sans-serif;
   color: #333;
   line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  text-align: center;
 }
 img {
   display: block;
