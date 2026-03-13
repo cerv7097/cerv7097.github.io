@@ -6,44 +6,36 @@
   <title>Lanetta Cervantes | Portfolio</title>
   <style>
     :root {
-      --bg: #0b1020;
-      --bg-alt: #111831;
-      --card: rgba(255,255,255,0.06);
-      --card-border: rgba(255,255,255,0.14);
-      --text: #eef2ff;
-      --muted: #b7c0e0;
-      --accent: #86efac;
-      --accent-2: #7dd3fc;
-      --shadow: 0 20px 50px rgba(0,0,0,0.28);
+      --bg: #f5f8fc;
+      --bg-alt: #eaf1f8;
+      --card: rgba(255,255,255,0.92);
+      --card-border: rgba(29, 78, 137, 0.12);
+      --text: #16263a;
+      --muted: #5f7287;
+      --accent: #1d4e89;
+      --accent-2: #2cb1bc;
+      --accent-soft: #d9eef2;
+      --shadow: 0 18px 40px rgba(24, 39, 75, 0.10);
       --max: 1120px;
     }
 
     * { box-sizing: border-box; }
-
     html { scroll-behavior: smooth; }
 
     body {
       margin: 0;
       font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(125, 211, 252, 0.15), transparent 30%),
-        radial-gradient(circle at top right, rgba(134, 239, 172, 0.14), transparent 26%),
-        linear-gradient(180deg, #0b1020 0%, #0f172a 55%, #111827 100%);
+        radial-gradient(circle at top left, rgba(44, 177, 188, 0.16), transparent 28%),
+        radial-gradient(circle at top right, rgba(29, 78, 137, 0.12), transparent 26%),
+        linear-gradient(180deg, #f7fbff 0%, #eef4fa 52%, #e6eef6 100%);
       color: var(--text);
       line-height: 1.6;
     }
 
-    a {
-      color: var(--accent-2);
-      text-decoration: none;
-    }
-
+    a { color: var(--accent); text-decoration: none; }
     a:hover { text-decoration: underline; }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(var(--max), calc(100% - 2rem));
@@ -55,8 +47,8 @@
       top: 0;
       z-index: 100;
       backdrop-filter: blur(16px);
-      background: rgba(11, 16, 32, 0.78);
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      background: rgba(247, 251, 255, 0.84);
+      border-bottom: 1px solid rgba(29, 78, 137, 0.08);
     }
 
     .topbar-inner {
@@ -71,7 +63,7 @@
       font-size: 1rem;
       font-weight: 700;
       letter-spacing: 0.02em;
-      color: var(--text);
+      color: var(--accent);
     }
 
     .nav {
@@ -84,11 +76,15 @@
     .nav a {
       color: var(--muted);
       font-size: 0.95rem;
+      font-weight: 500;
     }
 
-    .hero {
-      padding: 5rem 0 3.25rem;
+    .nav a:hover {
+      color: var(--accent);
+      text-decoration: none;
     }
+
+    .hero { padding: 5rem 0 3.25rem; }
 
     .hero-grid {
       display: grid;
@@ -102,11 +98,12 @@
       align-items: center;
       gap: 0.55rem;
       padding: 0.45rem 0.8rem;
-      border: 1px solid rgba(255,255,255,0.12);
+      border: 1px solid rgba(29, 78, 137, 0.12);
       border-radius: 999px;
-      color: var(--muted);
-      background: rgba(255,255,255,0.04);
+      color: var(--accent);
+      background: rgba(255,255,255,0.7);
       font-size: 0.9rem;
+      font-weight: 600;
       margin-bottom: 1rem;
     }
 
@@ -115,6 +112,7 @@
       font-size: clamp(2.5rem, 6vw, 4.5rem);
       line-height: 1.02;
       letter-spacing: -0.04em;
+      color: #102033;
     }
 
     .hero .subtitle {
@@ -139,7 +137,7 @@
       padding: 0.9rem 1.2rem;
       border-radius: 999px;
       font-weight: 600;
-      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, background 0.18s ease, border-color 0.18s ease;
       box-shadow: var(--shadow);
     }
 
@@ -150,21 +148,32 @@
 
     .button-primary {
       background: linear-gradient(135deg, var(--accent), var(--accent-2));
-      color: #08111f;
+      color: #ffffff;
     }
 
     .button-secondary {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      color: var(--text);
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(29, 78, 137, 0.14);
+      color: var(--accent);
+    }
+
+    .button-secondary:hover {
+      border-color: rgba(44, 177, 188, 0.35);
+      background: #ffffff;
     }
 
     .hero-card {
-      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      background: linear-gradient(180deg, rgba(255,255,255,0.96), rgba(241,247,252,0.94));
       border: 1px solid var(--card-border);
       border-radius: 28px;
       padding: 1.25rem;
       box-shadow: var(--shadow);
+    }
+
+    .headshot-frame {
+      overflow: hidden;
+      border-radius: 22px;
+      border: 1px solid rgba(29, 78, 137, 0.08);
     }
 
     .headshot {
@@ -172,7 +181,9 @@
       border-radius: 22px;
       aspect-ratio: 4 / 4.5;
       object-fit: cover;
-      border: 1px solid rgba(255,255,255,0.1);
+      object-position: center 18%;
+      transform: scale(1.08);
+      transform-origin: center;
     }
 
     .hero-meta {
@@ -183,8 +194,8 @@
     }
 
     .meta-item {
-      background: rgba(255,255,255,0.05);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(233, 242, 249, 0.88);
+      border: 1px solid rgba(29, 78, 137, 0.08);
       border-radius: 18px;
       padding: 0.85rem 1rem;
     }
@@ -197,22 +208,19 @@
     }
 
     .meta-value {
-      font-weight: 600;
+      font-weight: 700;
       margin-top: 0.2rem;
+      color: var(--text);
     }
 
-    section {
-      padding: 1.5rem 0 0.5rem;
-    }
-
-    .section-heading {
-      margin-bottom: 1rem;
-    }
+    section { padding: 1.5rem 0 0.5rem; }
+    .section-heading { margin-bottom: 1rem; }
 
     .section-heading h2 {
       margin: 0;
       font-size: 1.95rem;
       letter-spacing: -0.03em;
+      color: #102033;
     }
 
     .section-heading p {
@@ -245,34 +253,24 @@
     .badge {
       border-radius: 999px;
       padding: 0.5rem 0.8rem;
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.1);
-      color: var(--muted);
+      background: var(--accent-soft);
+      border: 1px solid rgba(44, 177, 188, 0.18);
+      color: var(--accent);
       font-size: 0.92rem;
+      font-weight: 600;
     }
 
-    .resume-highlights {
-      display: grid;
-      gap: 0.9rem;
-    }
-
-    .timeline {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
+    .resume-highlights { display: grid; gap: 0.9rem; }
+    .timeline { display: grid; gap: 1rem; margin-top: 1rem; }
 
     .timeline-item {
       padding: 1.1rem;
       border-radius: 20px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(255,255,255,0.08);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(29, 78, 137, 0.09);
     }
 
-    .timeline-item h3 {
-      margin: 0;
-      font-size: 1.1rem;
-    }
+    .timeline-item h3 { margin: 0; font-size: 1.1rem; color: #13263b; }
 
     .timeline-item .role-meta {
       color: var(--muted);
@@ -282,7 +280,7 @@
 
     .timeline-item ul,
     .project-card ul,
-    .resume-panel ul {
+    .education-panel ul {
       margin: 0.8rem 0 0;
       padding-left: 1.1rem;
     }
@@ -295,8 +293,8 @@
     }
 
     .project-card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
+      background: rgba(255,255,255,0.9);
+      border: 1px solid rgba(29, 78, 137, 0.1);
       border-radius: 24px;
       padding: 1.35rem;
       box-shadow: var(--shadow);
@@ -305,14 +303,11 @@
       gap: 0.75rem;
     }
 
-    .project-card h3 {
-      margin: 0;
-      font-size: 1.2rem;
-    }
+    .project-card h3 { margin: 0; font-size: 1.2rem; color: #13263b; }
 
     .project-tech {
-      color: var(--accent);
-      font-weight: 600;
+      color: var(--accent-2);
+      font-weight: 700;
       font-size: 0.92rem;
     }
 
@@ -324,39 +319,32 @@
     }
 
     .skills-group h3,
-    .resume-panel h3 {
+    .education-panel h3 {
       margin-top: 0;
       margin-bottom: 0.5rem;
       font-size: 1.05rem;
+      color: #13263b;
     }
 
-    .resume-panel {
-      display: grid;
-      gap: 1rem;
-    }
+    .education-panel { display: grid; gap: 1rem; }
 
-    .resume-inline {
-      display: grid;
-      gap: 1rem;
-      margin-top: 1rem;
-    }
-
-    .resume-entry {
+    .education-entry {
       padding-bottom: 1rem;
-      border-bottom: 1px solid rgba(255,255,255,0.08);
+      border-bottom: 1px solid rgba(29, 78, 137, 0.08);
     }
 
-    .resume-entry:last-child {
+    .education-entry:last-child {
       border-bottom: none;
       padding-bottom: 0;
     }
 
-    .resume-entry h4 {
+    .education-entry h4 {
       margin: 0;
       font-size: 1.02rem;
+      color: #13263b;
     }
 
-    .resume-entry .entry-meta {
+    .education-entry .entry-meta {
       color: var(--muted);
       font-size: 0.94rem;
       margin-top: 0.2rem;
@@ -380,23 +368,13 @@
         align-items: flex-start;
       }
 
-      .nav {
-        justify-content: flex-start;
-      }
+      .nav { justify-content: flex-start; }
     }
 
     @media (max-width: 560px) {
-      .hero {
-        padding-top: 3rem;
-      }
-
-      .hero-meta {
-        grid-template-columns: 1fr;
-      }
-
-      .button {
-        width: 100%;
-      }
+      .hero { padding-top: 3rem; }
+      .hero-meta { grid-template-columns: 1fr; }
+      .button { width: 100%; }
     }
   </style>
 </head>
@@ -406,10 +384,10 @@
       <a class="brand" href="#top">Lanetta Cervantes</a>
       <nav class="nav" aria-label="Primary">
         <a href="#about">About</a>
+        <a href="#education">Education</a>
         <a href="#experience">Experience</a>
         <a href="#projects">Projects</a>
         <a href="#skills">Skills</a>
-        <a href="#resume">Resume</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
@@ -420,11 +398,12 @@
       <div class="container hero-grid">
         <div>
           <div class="eyebrow">Software Engineering Student · Enterprise Architecture Intern · Full-Stack Builder</div>
-          <h1>Creating software solutions that connect technology with real business impact.</h1>
+          <h1>Building thoughtful systems, polished apps, and real business impact.</h1>
           <p class="subtitle">
-            Hi, I’m Lanetta, a Software Engineering student at the University of Northern Colorado with a passion for enterprise architecture and building scalable software solutions across cloud platforms, enterprise systems, and modern web technologies. I’m particularly excited about the future of AI and its potential to reshape how organizations build and use technology.
+            I’m Lanetta Cervantes, a Software Engineering student at the University of Northern Colorado who enjoys turning technical ideas into usable, scalable solutions across cloud platforms, enterprise systems, and modern web development.
           </p>
           <div class="hero-actions">
+            <!-- Primary GitHub profile link so recruiters can explore all repositories -->
             <a class="button button-primary" href="#projects">View Projects</a>
             <a class="button button-secondary" href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
             <a class="button button-secondary" href="mailto:lanettacervantes@gmail.com">Email Me</a>
@@ -432,12 +411,10 @@
         </div>
 
         <aside class="hero-card">
-          <img class="headshot" src="https://cerv7097.github.io/images/Lanetta_26.png" alt="Headshot of Lanetta Cervantes" />
+          <div class="headshot-frame">
+            <img class="headshot" src="https://cerv7097.github.io/images/Lanetta_26.png" alt="Headshot of Lanetta Cervantes" />
+          </div>
           <div class="hero-meta">
-            <div class="meta-item">
-              <div class="meta-label">Location</div>
-              <div class="meta-value">Greeley, CO</div>
-            </div>
             <div class="meta-item">
               <div class="meta-label">Graduation</div>
               <div class="meta-value">May 2026</div>
@@ -449,6 +426,10 @@
             <div class="meta-item">
               <div class="meta-label">Focus</div>
               <div class="meta-value">Systems · Cloud · Full-Stack</div>
+            </div>
+            <div class="meta-item">
+              <div class="meta-label">Interest</div>
+              <div class="meta-value">Enterprise Architecture · AI</div>
             </div>
           </div>
         </aside>
@@ -490,6 +471,30 @@
       </div>
     </section>
 
+    <section id="education">
+      <div class="container">
+        <div class="card education-panel">
+          <div class="section-heading">
+            <h2>Education</h2>
+            <p>
+              My academic foundation centers on software engineering, systems thinking, and applied technical problem solving.
+            </p>
+          </div>
+
+          <div class="education-entry">
+            <h4>University of Northern Colorado</h4>
+            <div class="entry-meta">Bachelor of Science, Software Engineering · May 2026</div>
+            <ul>
+              <li>3.97 cumulative GPA</li>
+              <li>Dean’s List of Academic Distinction (2024–2025)</li>
+              <li>Ron Orland Scholars (2025)</li>
+              <li>Finley-Ledall Scholars (2024)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section id="experience">
       <div class="container">
         <div class="section-heading">
@@ -502,7 +507,7 @@
         <div class="timeline">
           <article class="timeline-item">
             <h3>Technical Consultant &amp; Full-Stack Developer · Stucco Rite Inc.</h3>
-            <div class="role-meta">Greeley, CO · January 2026 – Present</div>
+            <div class="role-meta">January 2026 – Present</div>
             <ul>
               <li>Architected and deployed a production full-stack inspection platform integrating frontend workflows, backend services, database storage, and PDF generation for OSHA-compliant digital inspections and business process automation.</li>
               <li>Verified end-to-end functionality across form workflows, digital signature capture, and PDF generation through structured testing and debugging of cross-component interactions.</li>
@@ -511,7 +516,7 @@
 
           <article class="timeline-item">
             <h3>IT Enterprise Architecture Intern · Hensel Phelps Construction Co.</h3>
-            <div class="role-meta">Greeley, CO · August 2025 – Present</div>
+            <div class="role-meta">August 2025 – Present</div>
             <ul>
               <li>Modeled and optimized 30+ cross-functional business processes in SAP Signavio, presenting findings to senior stakeholders to clarify SAP integration architecture and identify future-state automation opportunities.</li>
               <li>Mapped 18 enterprise departments, 85 business capabilities, and 346 processes in SAP LeanIX to visualize enterprise system dependencies and support enterprise architecture planning.</li>
@@ -521,7 +526,7 @@
 
           <article class="timeline-item">
             <h3>IT Development Intern · Hensel Phelps Construction Co.</h3>
-            <div class="role-meta">Greeley, CO · May 2025 – August 2025</div>
+            <div class="role-meta">May 2025 – August 2025</div>
             <ul>
               <li>Contributed to the Searchable Subcontract Archive Blazor web application by migrating data services from Google Cloud Platform to Azure and validating system functionality across cloud services, APIs, and application interfaces.</li>
               <li>Modernized the Safety Connect application by migrating the front-end build system from Create React App to Vite, resolving technical debt and improving dependency compatibility.</li>
@@ -531,7 +536,7 @@
 
           <article class="timeline-item">
             <h3>Assistant Manager · The Outback Restaurant &amp; Pub at Boomerang Golf Course</h3>
-            <div class="role-meta">Greeley, CO · March 2022 – April 2025</div>
+            <div class="role-meta">March 2022 – April 2025</div>
             <ul>
               <li>Consulted with clients for 20+ events, recommending premium packages and add-ons to increase revenue while evaluating menu and operational workflows.</li>
               <li>Helped redesign service offerings to improve margins and reduce back-of-house labor by 20 hours per week.</li>
@@ -561,7 +566,7 @@
               <li>Integrated a React-based interface with a career-guidance chatbot.</li>
               <li>Combined resume analysis, job discovery, and guidance into one user experience.</li>
             </ul>
-            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
           </article>
 
           <article class="project-card">
@@ -574,7 +579,7 @@
               <li>Integrated external financial APIs for dynamic pricing.</li>
               <li>Focused on realistic trade simulation and user-facing market interactions.</li>
             </ul>
-            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
           </article>
 
           <article class="project-card">
@@ -587,7 +592,7 @@
               <li>Supports form workflows, PDF generation, and digital signatures.</li>
               <li>Built with a business-process mindset, not just a student-project mindset.</li>
             </ul>
-            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View Related Work</a>
+            <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">View GitHub Repository</a>
           </article>
 
           <article class="project-card">
@@ -636,45 +641,7 @@
       </div>
     </section>
 
-    <section id="resume">
-      <div class="container grid-2">
-        <div class="card resume-panel">
-          <div class="section-heading">
-            <h2>Resume Snapshot</h2>
-            <p>
-              This section mirrors the strongest points from my current resume in a more web-friendly format.
-            </p>
-          </div>
-
-          <div>
-            <h3>Education</h3>
-            <div class="resume-entry">
-              <h4>University of Northern Colorado</h4>
-              <div class="entry-meta">Bachelor of Science, Software Engineering · May 2026 · Greeley, CO</div>
-              <ul>
-                <li>3.97 cumulative GPA</li>
-                <li>Dean’s List of Academic Distinction (2024–2025)</li>
-                <li>Ron Orland Scholars (2025)</li>
-                <li>Finley-Ledall Scholars (2024)</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-
-        <div class="card resume-panel">
-          <div class="section-heading">
-            <h2>Resume Links</h2>
-            <p>Give recruiters quick paths to the places they actually click.</p>
-          </div>
-          <div class="resume-inline">
-            <a class="button button-secondary" href="https://cerv7097.github.io/resume/index.html" target="_blank" rel="noopener noreferrer">Current Resume Site</a>
-            <a class="button button-secondary" href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">GitHub Profile</a>
-            <a class="button button-secondary" href="mailto:lanettacervantes@gmail.com">Email</a>
-          </div>
-          <p style="color: var(--muted); margin-top: 0.5rem;">Optional next step: replace the current resume-only page with this portfolio layout and add direct links to each project repository.</p>
-        </div>
-      </div>
-    </section>
+    
 
     <section id="contact">
       <div class="container">
@@ -686,11 +653,19 @@
           <p><strong>Email:</strong> <a href="mailto:lanettacervantes@gmail.com">lanettacervantes@gmail.com</a></p>
           <p><strong>GitHub:</strong> <a href="https://github.com/cerv7097" target="_blank" rel="noopener noreferrer">github.com/cerv7097</a></p>
           <p><strong>Portfolio:</strong> <a href="https://cerv7097.github.io/resume/index.html" target="_blank" rel="noopener noreferrer">cerv7097.github.io/resume/index.html</a></p>
-          <p><strong>Location:</strong> Greeley, Colorado</p>
+          
         </div>
       </div>
     </section>
   </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Lanetta Cervantes. Built with HTML and CSS.</p>
+    </div>
+  </footer>
+</body>
+</html>
 
   <footer>
     <div class="container">
